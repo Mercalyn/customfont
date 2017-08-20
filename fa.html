@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway|Encode+Sans" rel="stylesheet">
+    </head>
+
+    <section>
+        <h2>Messing around with Font Awesome</h2>
+        <p>Also testing a googleapi custom in-browser loaded font</p>
+        <i class="fa fa-link fa-5x"></i>
+        <i class="fa fa-gear fa-5x fa-spin"></i>
+        <i class="fa fa-thermometer" style="font-size:1500%"></i>
+        <br>
+        <i class="fa fa-battery-0" style="font-size:300%"></i>
+        <i class="fa fa-battery-1" style="font-size:300%"></i>
+        <i class="fa fa-battery-2" style="font-size:300%"></i>
+        <i class="fa fa-battery-3" style="font-size:300%"></i>
+        <i class="fa fa-battery-4" style="font-size:300%"></i>
+    </section>
+    <p>Let's try to inject some functionality into these batteries</p>
+    <div><p class="boldened">CLICK the battery below to change charge states</p></div>
+    <i class="fa fa-battery-0" id="battery" style="font-size:750%"></i>
+    <style>
+        *{
+            user-select: none;
+            margin:10px;
+        }
+        p{
+            font-family: 'Raleway', sans-serif;
+        }
+        h2{
+            font-family: 'Encode Sans', sans-serif;
+            text-transform: uppercase;
+        }
+        .boldened{
+            font-weight: 700;
+            font-size: 150%;
+        }
+    </style>
+    <script>
+        //setting up initial value of the battery, 0
+        var battState = 0;
+        
+        var clickButton = document.getElementById("battery");
+        clickButton.onclick = function(){
+            switch(battState){
+                case 0:
+                    clickButton.className = "fa fa-battery-1";
+                    battState++;
+                    break;
+                case 1:
+                    clickButton.className = "fa fa-battery-2";
+                    battState++;
+                    break;
+                case 2:
+                    clickButton.className = "fa fa-battery-3";
+                    battState++;
+                    break;
+                case 3:
+                    clickButton.className = "fa fa-battery-4";
+                    battState++;
+                    break;
+                case 4:
+                    clickButton.className = "fa fa-battery-0";
+                    battState = 0;
+                    break;
+                   }
+        };
+    </script>
+</html>
